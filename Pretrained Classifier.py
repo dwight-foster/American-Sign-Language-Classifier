@@ -29,11 +29,11 @@ vgg16 =vgg16.cuda()
 print(vgg16)
 
 #Defining optimizer and loss
-optimizer = optim.SGD(vgg16.classifier.parameters(), lr=0.001)
+optimizer = optim.SGD(vgg16.classifier.parameters(), lr=0.002)
 criterion = nn.CrossEntropyLoss()
 
 #Train Loop
-epochs = 20
+epochs = 50
 for e in range(epochs):
     train_loss = 0.0
     correct = 0.0
@@ -56,3 +56,5 @@ for e in range(epochs):
     print('\nTrain Accuracy: %2d%% (%2d/%2d)' % (
         100. * correct / total, correct, total))
 #Test loop coming soon
+#You will probably want to train this mutliple times
+#Got too around 50% on first try 
