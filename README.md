@@ -1,7 +1,9 @@
 # American-Sign-Language-Classifier
 Classifying Letters of the American Sign Language.
 
-Requirements **Pytorch** and **Numpy**.
+##Requirements 
+
+**Pytorch** and **Numpy**.
 
 You can find the installation instructions for **Numpy** [here](https://www.scipy.org/scipylib/download.html)
 
