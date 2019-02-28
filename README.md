@@ -1,6 +1,8 @@
 # American-Sign-Language-Classifier
 Classifying Letters of the American Sign Language.
 
+I used the **VGG16** network for transfer learning. 
+
 ## Requirements 
 
 **Pytorch** and **Numpy**.
@@ -9,7 +11,7 @@ You can find the installation instructions for **Numpy** [here](https://www.scip
 
 And the one for **Pytoch** [here](https://pytorch.org)
 
-Using pretrained network and one from _scratch_.
+
 ## Where to find dataset
 I got the dataset from [Kaggle](https://www.kaggle.com/grassknoted/asl-alphabet).
 
