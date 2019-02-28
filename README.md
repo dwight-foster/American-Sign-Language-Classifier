@@ -5,6 +5,8 @@ Requirements **Pytorch** and **Numpy**.
 
 You can find the installation instructions for **Numpy** [here](https://www.scipy.org/scipylib/download.html)
 
+And the one for **Pytoch** [here](https://pytorch.org)
+
 Using pretrained network and one from _scratch_.
 ## Where to find dataset
 I got the dataset from [Kaggle](https://www.kaggle.com/grassknoted/asl-alphabet).
