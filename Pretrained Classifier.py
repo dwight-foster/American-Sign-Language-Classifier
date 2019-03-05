@@ -55,6 +55,39 @@ for e in range(epochs):
     print(e)
     print('\nTrain Accuracy: %2d%% (%2d/%2d)' % (
         100. * correct / total, correct, total))
-#Test loop coming soon
+    if correct > max_correct:
+        max_correct = correct
+        torch.save(vgg16.state_dict(), 'model_transfer.pt')
+        print('Saving Model... ')  
+      
+#Test loop 
+vgg16.load_state_dict(torch.load('model_transfer.pt'))
+test_loss = 0.0
+class_correct = list(0. for i in range(10))
+class_total = list(0. for i in range(10))
+
+
+# iterate over test data
+for batch_idx, (images, labels) in enumerate(test_loader):
+    # move tensors to GPU if CUDA is available
+   
+    data, target = images.cuda(), labels.cuda()
+    # forward pass: compute predicted outputs by passing inputs to the model
+    output = vgg16(data)
+    
+    # calculate the batch loss
+    loss = criterion(output, target)
+    # update test loss 
+    test_loss += loss.item()*data.size(0)
+    # convert output probabilities to predicted class
+    pred = output.data.max(1, keepdim=True)[1] 
+    # compare predictions to true label
+    correct += np.sum(np.squeeze(pred.eq(target.data.view_as(pred))).cpu().numpy())
+    total += images.size(0)
+    # calculate test accuracy for each object class
+print('\nTest Accuracy: %2d%% (%2d/%2d)' % (
+        100. * correct / total, correct, total))  
+
+      
 #You will probably want to train this mutliple times
 #Got too around 50% on first try 
