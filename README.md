@@ -3,6 +3,8 @@ Classifying Letters of the American Sign Language.
 
 I used the **VGG16** network for transfer learning. 
 
+I tried to use a scratch model but couldn't get the accuracy over 10%
+
 ## Requirements 
 
 **Pytorch** and **Numpy**.
