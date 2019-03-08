@@ -9,9 +9,13 @@ I tried to use a scratch model but couldn't get the accuracy over 10%
 
 **Pytorch** and **Numpy**.
 
+**OpenCV** is required for ASL-Detection.
+
 You can find the installation instructions for **Numpy** [here](https://www.scipy.org/scipylib/download.html)
 
 And the one for **Pytoch** [here](https://pytorch.org)
+
+And [here](https://github.com/opencv/opencv) is the github repo for **OpenCV** 
 
 
 ## Where to find dataset
