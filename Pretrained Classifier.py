@@ -8,7 +8,8 @@ import torch.optim as optim
 from torch.utils.data.sampler import SubsetRandomSampler
 
 #Defining the test and train loaders
-train_data = datasets.ImageFolder(r'Drive/asl-alphabet-test', transform=transforms.Compose([transforms.RandomResizedCrop(224),transforms.ToTensor()]))
+train_data = datasets.ImageFolder(r'Drive/asl-alphabet-test', transform=transforms.Compose([transforms.RandomResizedCrop(224),transforms.ToTensor(),transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                                                                                                                                                std=[0.229, 0.224, 0.225])]))
 num_train = len(train_data)
 indices = list(range(num_train))
 np.random.shuffle(indices)
